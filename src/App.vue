@@ -9,7 +9,7 @@ import { DEFAULT_COLOR } from './customization/default'
 import custom from './customization/custom'
 import { computed } from '@vue/runtime-core'
 
-const linksColor = computed(() => custom.secondary || DEFAULT_COLOR.SECONDARY)
+const linksColor = computed(() => custom.secondary ?? DEFAULT_COLOR.SECONDARY)
 
 </script>
 
