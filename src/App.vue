@@ -1,13 +1,20 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
+
+<script setup lang="ts">
+import HelloWorld from './components/HelloWorld.vue'
+import { DEFAULT_COLOR } from './customization/default'
+import custom from './customization/custom'
+import { computed } from '@vue/runtime-core'
+console.log(custom);
+console.log(DEFAULT_COLOR);
+
+const linksColor = computed(() => custom.secondary || DEFAULT_COLOR.SECONDARY)
+
+</script>
+
 
 <style>
 #app {
@@ -17,5 +24,9 @@ import HelloWorld from './components/HelloWorld.vue'
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+a {
+  color: v-bind(linksColor)
 }
 </style>

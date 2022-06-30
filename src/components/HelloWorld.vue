@@ -1,11 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-defineProps<{ msg: string }>()
-
-const count = ref(0)
-</script>
-
 <template>
   <h1>{{ msg }}</h1>
 
@@ -33,10 +25,15 @@ const count = ref(0)
   </p>
 </template>
 
+<script setup lang="ts">
+import { ref } from 'vue'
+
+defineProps<{ msg: string }>()
+
+const count = ref(0)
+</script>
+
 <style scoped>
-a {
-  color: #42b983;
-}
 
 label {
   margin: 0 0.5em;
