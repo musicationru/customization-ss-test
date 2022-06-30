@@ -8,8 +8,6 @@ import HelloWorld from './components/HelloWorld.vue'
 import { DEFAULT_COLOR } from './customization/default'
 import custom from './customization/custom'
 import { computed } from '@vue/runtime-core'
-console.log(custom);
-console.log(DEFAULT_COLOR);
 
 const linksColor = computed(() => custom.secondary || DEFAULT_COLOR.SECONDARY)
 
