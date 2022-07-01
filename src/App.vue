@@ -16,7 +16,7 @@ const color = computed(() => custom.main ?? DEFAULT_COLOR.SECONDARY)
 
 <style>
 * {
-  --linksColor: v-bind(color)
+  --color: v-bind(color)
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

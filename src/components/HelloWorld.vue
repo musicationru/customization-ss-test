@@ -41,7 +41,7 @@ label {
 }
 
 code {
-  background-color: var(--linksColor);
+  background-color: var(--color);
   padding: 2px 4px;
   border-radius: 4px;
   color: #304455;
