@@ -9,12 +9,15 @@ import { DEFAULT_COLOR } from './customization/default'
 import custom from './customization/custom'
 import { computed } from '@vue/runtime-core'
 
-const linksColor = computed(() => custom.secondary ?? DEFAULT_COLOR.SECONDARY)
+const color = computed(() => custom.main ?? DEFAULT_COLOR.SECONDARY)
 
 </script>
 
 
 <style>
+* {
+  --linksColor: v-bind(color)
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,6 +28,6 @@ const linksColor = computed(() => custom.secondary ?? DEFAULT_COLOR.SECONDARY)
 }
 
 a {
-  color: v-bind(linksColor)
+  color: var(--linksColor)
 }
 </style>

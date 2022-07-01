@@ -1,5 +1,5 @@
 export default {
-    main: 'yellow',
-    secondary: 'brown',
-    error: 'red'
+    // main: 'yellow',
+    // secondary: 'red',
+    // error: 'red'
 }
