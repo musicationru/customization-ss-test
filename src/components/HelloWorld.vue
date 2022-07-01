@@ -44,6 +44,6 @@ code {
   background-color: var(--color);
   padding: 2px 4px;
   border-radius: 4px;
-  color: #304455;
+  color: var(--another-color);
 }
 </style>
