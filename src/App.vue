@@ -1,32 +1,35 @@
 <template>
-  <img
-      alt="Vue logo"
-      src="./assets/logo.png"
-      @click="chColor"
-  />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div
+      id="wrap"
+  >
+    <img
+        alt="Vue logo"
+        src="./assets/logo.png"
+        @click="chColor"
+    />
+    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  </div>
 </template>
 
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import { DEFAULT_COLOR } from './customization/default'
+import { DEFAULT_COLORS } from './customization/default'
 import custom from './customization/custom'
-import { computed } from '@vue/runtime-core'
-import {ref} from "vue";
+import {ref, computed} from "vue";
 
-const customColor = ref(custom.main)
+const customColor = ref(custom.secondary)
 
 function chColor () {
-  if (customColor.value == 'green') {
-    customColor.value = custom.main;
+  if (customColor.value == 'black') {
+    customColor.value = custom.error;
   } else {
-    customColor.value = 'green';
+    customColor.value = 'black';
   }
 
 }
 
-const color = computed(() => custom.main ?? DEFAULT_COLOR.SECONDARY)
-const anotherColor = computed(() => customColor.value ?? DEFAULT_COLOR.SECONDARY)
+const color = computed(() => custom.main ?? DEFAULT_COLORS.MAIN)
+const anotherColor = computed(() => customColor.value ?? DEFAULT_COLORS.SECONDARY)
 
 </script>
 
@@ -46,6 +49,6 @@ const anotherColor = computed(() => customColor.value ?? DEFAULT_COLOR.SECONDARY
 }
 
 a {
-  color: var(--linksColor)
+  color: var(--another-color)
 }
 </style>

@@ -1,5 +1,5 @@
 export default {
-    main: 'yellow',
-    secondary: 'red',
+    main: '#aaa777',
+    secondary: 'gray',
     error: 'red'
 }

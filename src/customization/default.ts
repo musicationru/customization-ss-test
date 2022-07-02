@@ -1,5 +1,5 @@
-export enum DEFAULT_COLOR {
-    MAIN = 'green',
-    SECONDARY = 'blue',
-    ERROR = 'red'
+export const DEFAULT_COLORS = {
+    MAIN: 'green',
+    SECONDARY: 'blue',
+    ERROR: 'red'
 }
