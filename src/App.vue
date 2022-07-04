@@ -25,11 +25,26 @@ function chColor () {
   } else {
     customColor.value = 'black';
   }
-
 }
+
 
 const color = computed(() => custom.main ?? DEFAULT_COLORS.MAIN)
 const anotherColor = computed(() => customColor.value ?? DEFAULT_COLORS.SECONDARY)
+
+// async function returning color
+const getColor = async (): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    setTimeout(
+    () => resolve('#34fa56'),
+    5000
+    )
+  })
+}
+
+// async updating color
+(async () => {
+  customColor.value = await getColor();
+})();
 
 </script>
 
