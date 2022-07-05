@@ -31,19 +31,24 @@ function chColor () {
 const color = computed(() => custom.main ?? DEFAULT_COLORS.MAIN)
 const anotherColor = computed(() => customColor.value ?? DEFAULT_COLORS.SECONDARY)
 
-// async function returning color
-const getColor = async (): Promise<string> => {
+// async function returning string after delay
+const getColor = async (delay: number, color: string): Promise<string> => {
   return new Promise((resolve, reject) => {
     setTimeout(
-    () => resolve('#34fa56'),
-    5000
+    () => resolve(color),
+     delay
     )
   })
 }
 
-// async updating color
+// async updating color after 4s
 (async () => {
-  customColor.value = await getColor();
+  customColor.value = await getColor(4000, '#34fa56');
+})();
+
+// async updating color after 10s
+(async () => {
+  customColor.value = await getColor(10000, 'darkblue');
 })();
 
 </script>
